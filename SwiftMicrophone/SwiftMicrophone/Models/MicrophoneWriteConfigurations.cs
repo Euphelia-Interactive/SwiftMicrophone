@@ -10,14 +10,15 @@ namespace Euphelia.SwiftMicrophone.Models
 {
 	public readonly struct MicrophoneWriteConfigurations
 	{
-		public const int BITS = 16;
+		public const  int                           BITS = 16;
+		public static MicrophoneWriteConfigurations Default => new MicrophoneWriteConfigurations(0, Enums.FrameDuration.Normal, Enums.Bitrate.Normal, null);
 		
 		public MicrophoneWriteConfigurations
 		(
-				int           deviceNumber = 0,
-				FrameDuration duration     = Enums.FrameDuration.Normal,
-				Bitrate       bitrate      = Enums.Bitrate.Normal,
-				Channels?     channels     = null
+				int           deviceNumber,
+				FrameDuration duration,
+				Bitrate       bitrate,
+				Channels?     channels
 		)
 		{
 			duration.ThrowInvalidEnumValue($"Invalid ${nameof(duration)} passed to {nameof(MicrophoneWriteConfigurations)}.");

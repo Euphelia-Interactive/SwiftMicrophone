@@ -12,6 +12,7 @@ namespace Euphelia.SwiftMicrophone.Services
 		public delegate void DataReceivedDelegate(byte[] dgram, int bytes);
 		
 		private readonly MicrophoneWriteConfigurations _configurations;
+		private          WaveInEvent                   _waveIn;
 		
 		public MicrophoneWriteFactory(MicrophoneWriteConfigurations configurations) => _configurations = configurations;
 		
@@ -22,20 +23,27 @@ namespace Euphelia.SwiftMicrophone.Services
 			var encoder = OpusCodecFactory.CreateEncoder(_configurations.MaxSampleRate, _configurations.Channels, OpusApplication.OPUS_APPLICATION_VOIP);
 			encoder.Bitrate = _configurations.Bitrate;
 			
-			var waveIn = new WaveInEvent
+			_waveIn = new WaveInEvent
 			{
 				DeviceNumber       = _configurations.DeviceNumber,
 				WaveFormat         = new WaveFormat(_configurations.MaxSampleRate, MicrophoneWriteConfigurations.BITS, _configurations.Channels),
 				BufferMilliseconds = _configurations.FrameDuration
 			};
 			
-			waveIn.DataAvailable += (sender, e) =>
+			_waveIn.DataAvailable += (sender, e) =>
 			{
+				// if (DataReceivedEvent is null || DataReceivedEvent.GetInvocationList().Length == 0)
+				// 	return;
+				
 				var pcmFloats = MicrophoneBitConverter.ConvertToFloatArray(e.Buffer);
 				var encoded   = new byte[1275]; // Maximum possible Opus packet size
 				var length    = encoder.Encode(new ReadOnlySpan<float>(pcmFloats, 0, _configurations.FrameSize), _configurations.FrameSize, new Span<byte>(encoded), encoded.Length);
 				DataReceivedEvent?.Invoke(encoded, length);
 			};
+			
+			_waveIn.StartRecording();
 		}
+		
+		public void Stop() => _waveIn?.StopRecording();
 	}
 }
