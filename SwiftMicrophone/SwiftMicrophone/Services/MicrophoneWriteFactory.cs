@@ -9,14 +9,16 @@ namespace Euphelia.SwiftMicrophone.Services
 {
 	public class MicrophoneWriteFactory
 	{
-		public delegate void DataReceivedDelegate(byte[] dgram, int bytes);
+		public delegate void DataReceivedDelegate(byte[]     dgram,  int              bytes);
+		public delegate void RecordingStoppedDelegate(object sender, StoppedEventArgs e);
 		
 		private readonly MicrophoneWriteConfigurations _configurations;
 		private          WaveInEvent                   _waveIn;
 		
 		public MicrophoneWriteFactory(MicrophoneWriteConfigurations configurations) => _configurations = configurations;
 		
-		public event DataReceivedDelegate DataReceivedEvent;
+		public event DataReceivedDelegate     DataReceivedEvent;
+		public event RecordingStoppedDelegate RecordingStoppedEvent;
 		
 		public void Start()
 		{
@@ -40,7 +42,7 @@ namespace Euphelia.SwiftMicrophone.Services
 				var length    = encoder.Encode(new ReadOnlySpan<float>(pcmFloats, 0, _configurations.FrameSize), _configurations.FrameSize, new Span<byte>(encoded), encoded.Length);
 				DataReceivedEvent?.Invoke(encoded, length);
 			};
-			
+			_waveIn.RecordingStopped += (sender, stoppedEventArgs) => RecordingStoppedEvent?.Invoke(sender, stoppedEventArgs);
 			_waveIn.StartRecording();
 		}
 		
