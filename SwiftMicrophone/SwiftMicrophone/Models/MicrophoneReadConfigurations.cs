@@ -4,8 +4,8 @@ namespace Euphelia.SwiftMicrophone.Models
 	{
 		public MicrophoneReadConfigurations(int sampleRate, int channels)
 		{
-			SampleRate    = sampleRate;
-			Channels = channels;
+			SampleRate = sampleRate;
+			Channels   = channels;
 		}
 		
 		public int Channels   { get; }
