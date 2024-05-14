@@ -24,7 +24,7 @@ namespace Euphelia.SwiftMicrophone.Services
 			// Convert float PCM to 16-bit PCM
 			var pcmBytes = MicrophoneBitConverter.FloatTo16BitPcm(decoded, length * _configurations.Channels);
 			
-			return new AudioSamples(pcmBytes, pcmBytes.Length);
+			return new(pcmBytes, pcmBytes.Length);
 		}
 	}
 }

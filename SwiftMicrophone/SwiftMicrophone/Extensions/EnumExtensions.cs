@@ -15,7 +15,7 @@ namespace Euphelia.SwiftMicrophone.Extensions
 		public static void ThrowInvalidEnumValue<TEnum>(this TEnum value, string customMessage = null) where TEnum : struct, Enum
 		{
 			if (!value.IsValidEnumValue())
-				throw new Exception(customMessage ?? "Invalid enum value passed.");
+				throw new(customMessage ?? "Invalid enum value passed.");
 		}
 	}
 }

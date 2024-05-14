@@ -25,23 +25,30 @@ namespace Euphelia.SwiftMicrophone.Services
 			var encoder = OpusCodecFactory.CreateEncoder(_configurations.MaxSampleRate, _configurations.Channels, OpusApplication.OPUS_APPLICATION_VOIP);
 			encoder.Bitrate = _configurations.Bitrate;
 			
-			_waveIn = new WaveInEvent
+			_waveIn = new()
 			{
 				DeviceNumber       = _configurations.DeviceNumber,
-				WaveFormat         = new WaveFormat(_configurations.MaxSampleRate, MicrophoneWriteConfigurations.BITS, _configurations.Channels),
+				WaveFormat         = new(_configurations.MaxSampleRate, MicrophoneWriteConfigurations.BITS, _configurations.Channels),
 				BufferMilliseconds = _configurations.FrameDuration
 			};
 			
 			_waveIn.DataAvailable += (sender, e) =>
 			{
-				// if (DataReceivedEvent is null || DataReceivedEvent.GetInvocationList().Length == 0)
-				// 	return;
+				if (DataReceivedEvent is null || DataReceivedEvent.GetInvocationList().Length == 0)
+					return;
 				
 				var pcmFloats = MicrophoneBitConverter.ConvertToFloatArray(e.Buffer);
-				var encoded   = new byte[1275]; // Maximum possible Opus packet size
-				var length    = encoder.Encode(new ReadOnlySpan<float>(pcmFloats, 0, _configurations.FrameSize), _configurations.FrameSize, new Span<byte>(encoded), encoded.Length);
+				// Allocate buffer for encoded data with a reasonable maximum size
+				var maxPacketSize = 1275 * _configurations.Channels; // Assuming the maximum packet size per frame and number of channels
+				var encoded       = new byte[maxPacketSize];
+				
+				// Encode the PCM data to Opus format
+				var length = encoder.Encode(new ReadOnlySpan<float>(pcmFloats, 0, _configurations.FrameSize), _configurations.FrameSize, new(encoded), encoded.Length);
+				
+				// Invoke the DataReceivedEvent with the encoded data and its actual length
 				DataReceivedEvent?.Invoke(encoded, length);
 			};
+			
 			_waveIn.RecordingStopped += (sender, stoppedEventArgs) => RecordingStoppedEvent?.Invoke(sender, stoppedEventArgs);
 			_waveIn.StartRecording();
 		}

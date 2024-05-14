@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 using Euphelia.SwiftMicrophone.Enums;
 using Euphelia.SwiftMicrophone.Extensions;
@@ -11,7 +10,7 @@ namespace Euphelia.SwiftMicrophone.Models
 	public readonly struct MicrophoneWriteConfigurations
 	{
 		public const  int                           BITS = 16;
-		public static MicrophoneWriteConfigurations Default => new MicrophoneWriteConfigurations(0, Enums.FrameDuration.Normal, Enums.Bitrate.Normal, null);
+		public static MicrophoneWriteConfigurations Default => new(0, Enums.FrameDuration.Normal, Enums.Bitrate.Normal, null);
 		
 		public MicrophoneWriteConfigurations
 		(
@@ -50,7 +49,7 @@ namespace Euphelia.SwiftMicrophone.Models
 			}
 			catch (MmException)
 			{
-				throw new Exception($"Invalid {deviceNumber} passed to {nameof(MicrophoneWriteConfigurations)}.");
+				throw new($"Invalid {deviceNumber} passed to {nameof(MicrophoneWriteConfigurations)}.");
 			}
 		}
 		
@@ -62,7 +61,7 @@ namespace Euphelia.SwiftMicrophone.Models
 			channels.Value.ThrowInvalidEnumValue($"Invalid ${nameof(channels)} passed to {nameof(MicrophoneWriteConfigurations)}.");
 			var channelsInt = (int)channels;
 			if (channelsInt > capabilities.Channels)
-				throw new Exception($"Invalid ${nameof(channels)} passed to {nameof(MicrophoneWriteConfigurations)}. Maximum amount is {capabilities.Channels}");
+				throw new($"Invalid ${nameof(channels)} passed to {nameof(MicrophoneWriteConfigurations)}. Maximum amount is {capabilities.Channels}");
 			
 			return channelsInt;
 		}
