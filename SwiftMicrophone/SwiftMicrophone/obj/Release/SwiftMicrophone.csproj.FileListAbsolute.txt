@@ -18,3 +18,33 @@ G:\Programming Projects\Euphelia\SwiftMicrophone\SwiftMicrophone\SwiftMicrophone
 G:\Programming Projects\Euphelia\SwiftMicrophone\SwiftMicrophone\SwiftMicrophone\obj\Release\SwiftMic.F4CC4DDA.Up2Date
 G:\Programming Projects\Euphelia\SwiftMicrophone\SwiftMicrophone\SwiftMicrophone\obj\Release\SwiftMicrophone.dll
 G:\Programming Projects\Euphelia\SwiftMicrophone\SwiftMicrophone\SwiftMicrophone\obj\Release\SwiftMicrophone.pdb
+G:\Programming Projects\Euphelia\SwiftMicrophone\SwiftMicrophone\SwiftMicrophone\bin\Release\System.Diagnostics.DiagnosticSource.dll
+G:\Programming Projects\Euphelia\SwiftMicrophone\SwiftMicrophone\SwiftMicrophone\bin\Release\System.IO.Compression.dll
+G:\Programming Projects\Euphelia\SwiftMicrophone\SwiftMicrophone\SwiftMicrophone\bin\Release\System.Net.Http.dll
+G:\Programming Projects\Euphelia\SwiftMicrophone\SwiftMicrophone\SwiftMicrophone\bin\Release\System.Diagnostics.DiagnosticSource.xml
+G:\Programming Projects\Euphelia\SwiftMicrophone\SwiftMicrophone\SwiftMicrophone\bin\Release\Concentus.pdb
+G:\Programming Projects\Yuozas\Audio UDP Test\UDP Microphone with older library\SwiftMicrophone\bin\Release\SwiftMicrophone.dll.config
+G:\Programming Projects\Yuozas\Audio UDP Test\UDP Microphone with older library\SwiftMicrophone\bin\Release\SwiftMicrophone.dll
+G:\Programming Projects\Yuozas\Audio UDP Test\UDP Microphone with older library\SwiftMicrophone\bin\Release\SwiftMicrophone.pdb
+G:\Programming Projects\Yuozas\Audio UDP Test\UDP Microphone with older library\SwiftMicrophone\bin\Release\Concentus.dll
+G:\Programming Projects\Yuozas\Audio UDP Test\UDP Microphone with older library\SwiftMicrophone\bin\Release\NAudio.dll
+G:\Programming Projects\Yuozas\Audio UDP Test\UDP Microphone with older library\SwiftMicrophone\bin\Release\System.Buffers.dll
+G:\Programming Projects\Yuozas\Audio UDP Test\UDP Microphone with older library\SwiftMicrophone\bin\Release\System.Diagnostics.DiagnosticSource.dll
+G:\Programming Projects\Yuozas\Audio UDP Test\UDP Microphone with older library\SwiftMicrophone\bin\Release\System.IO.Compression.dll
+G:\Programming Projects\Yuozas\Audio UDP Test\UDP Microphone with older library\SwiftMicrophone\bin\Release\System.Memory.dll
+G:\Programming Projects\Yuozas\Audio UDP Test\UDP Microphone with older library\SwiftMicrophone\bin\Release\System.Net.Http.dll
+G:\Programming Projects\Yuozas\Audio UDP Test\UDP Microphone with older library\SwiftMicrophone\bin\Release\System.Numerics.Vectors.dll
+G:\Programming Projects\Yuozas\Audio UDP Test\UDP Microphone with older library\SwiftMicrophone\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+G:\Programming Projects\Yuozas\Audio UDP Test\UDP Microphone with older library\SwiftMicrophone\bin\Release\Concentus.pdb
+G:\Programming Projects\Yuozas\Audio UDP Test\UDP Microphone with older library\SwiftMicrophone\bin\Release\Concentus.xml
+G:\Programming Projects\Yuozas\Audio UDP Test\UDP Microphone with older library\SwiftMicrophone\bin\Release\NAudio.xml
+G:\Programming Projects\Yuozas\Audio UDP Test\UDP Microphone with older library\SwiftMicrophone\bin\Release\System.Buffers.xml
+G:\Programming Projects\Yuozas\Audio UDP Test\UDP Microphone with older library\SwiftMicrophone\bin\Release\System.Diagnostics.DiagnosticSource.xml
+G:\Programming Projects\Yuozas\Audio UDP Test\UDP Microphone with older library\SwiftMicrophone\bin\Release\System.Memory.xml
+G:\Programming Projects\Yuozas\Audio UDP Test\UDP Microphone with older library\SwiftMicrophone\bin\Release\System.Numerics.Vectors.xml
+G:\Programming Projects\Yuozas\Audio UDP Test\UDP Microphone with older library\SwiftMicrophone\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+G:\Programming Projects\Yuozas\Audio UDP Test\UDP Microphone with older library\SwiftMicrophone\obj\Release\SwiftMicrophone.csproj.AssemblyReference.cache
+G:\Programming Projects\Yuozas\Audio UDP Test\UDP Microphone with older library\SwiftMicrophone\obj\Release\SwiftMicrophone.csproj.CoreCompileInputs.cache
+G:\Programming Projects\Yuozas\Audio UDP Test\UDP Microphone with older library\SwiftMicrophone\obj\Release\SwiftMic.F4CC4DDA.Up2Date
+G:\Programming Projects\Yuozas\Audio UDP Test\UDP Microphone with older library\SwiftMicrophone\obj\Release\SwiftMicrophone.dll
+G:\Programming Projects\Yuozas\Audio UDP Test\UDP Microphone with older library\SwiftMicrophone\obj\Release\SwiftMicrophone.pdb
